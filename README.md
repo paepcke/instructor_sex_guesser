@@ -31,3 +31,11 @@ name_sex_guesser.py --outfile /tmp/sexed_names.csv \
                     /tmp/names_to_resolve \
                     /tmp/baby_names
 ```
+Note: when creating the sexed_names.csv file on a Mac, and import it on Linux, you may have to account fro the Mac's end-of-line convention; note the \r\n:
+
+```
+LOAD DATA LOCAL INFILE '/tmp/instructor_sex.csv'
+  INTO TABLE instructor_sex
+  FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' LINES TERMINATED BY '\r\n'
+  IGNORE 1 LINES;
+```
