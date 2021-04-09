@@ -3,7 +3,12 @@ Combines a list of English first names with a list of last/first[/middle-initial
 
 Optionally, creates an additional file with a list of the unknown entries.
 
-Baby names with their sex are taken from the [Social Security Administration] (https://www.ssa.gov/oact/babynames/limits.html).
+Baby names with their sex are taken from the [Social Security Administration] (https://www.ssa.gov/oact/babynames/names.zip). The file is not included here. To create after downloading into an otherwise empty directory:
+
+'''
+unzip names.zip
+cat *.txt > all_names.csv
+'''
 
 Starting point is a file with entries such as:
 
