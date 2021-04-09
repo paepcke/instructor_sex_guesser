@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 '''
 Created on Apr 8, 2021
 
@@ -268,9 +269,14 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    
-    instructor_nms = '/Users/paepcke/Project/Carta/Data/Names/instructor_names_filtered.csv'
-    baby_nms = '/Users/paepcke/Project/Carta/Data/Names/all_names.csv'
+    if not os.path.exists(args.names_file):
+        print(f"File {args.names_file} does not exist")
+        sys.exit(1)
+    if not os.path.exists(args.baby_name_file):
+        print(f"File {args.baby_name_file} does not exist")
+        sys.exit(1)
+
+
     guesser = NameSexGuesser(args.names_file,
                              args.baby_name_file,
                              outfile=args.outfile,
